@@ -19,7 +19,7 @@
                                 <select id="page"
                                         class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm rounded-md"
                                         wire:model="page">
-                                    @for($i = 1; $i < $pageCount; $i++)
+                                    @for($i = 1; $i <= $pageCount; $i++)
                                         <option value="{{ $i }}">Page {{ $i }} / {{ $pageCount }}</option>
                                     @endfor
                                 </select>
@@ -54,6 +54,17 @@
                                 <span class="text-sm text-gray-600" wire:loading.class="animate-pulse">
                                     {{ $parseMetrics }}
                                 </span>
+                            </div>
+
+                            <div class="text-xs bg-gray-50 overflow-scroll rounded-lg p-2">
+                                <code>
+                                    $config = new \Smalot\PdfParser\Config();<br>
+                                    $config->setFontSpaceLimit({{ $fontSpaceLimit }});<br>
+                                    $config->setHorizontalOffset("\t");<br><br>
+                                    $parser = new \Smalot\PdfParser\Parser([], $config);<br>
+                                    $pdf = $parser->parseFile('path/to/file');<br>
+                                    $text = $pdf->getText();<br>
+                                </code>
                             </div>
                         @endif
                     </div>

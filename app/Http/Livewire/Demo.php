@@ -61,7 +61,7 @@ class Demo extends Component
         $parser = new \Smalot\PdfParser\Parser([], $config);
         $pdf = $parser->parseFile($this->pdf->getRealPath());
 
-        $this->text = $pdf->getPages()[$this->page]?->getText();
+        $this->text = $pdf->getPages()[$this->page - 1]?->getText();
         $this->pageCount = count($pdf->getPages());
     }
 }
