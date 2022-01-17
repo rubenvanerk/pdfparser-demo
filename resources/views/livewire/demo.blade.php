@@ -25,29 +25,37 @@
                                 </select>
                                 @error('page') <span class="error">{{ $message }}</span> @enderror
                             </div>
+
+                            <div>
+                                <label for="font-space-limit" class="block text-sm font-medium text-gray-700">
+                                    Font space limit
+                                </label>
+                                <div class="mt-1">
+                                    <input type="number" id="font-space-limit"
+                                           class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                           wire:model="fontSpaceLimit">
+                                </div>
+                                @error('fontSpaceLimit') <span class="error">{{ $message }}</span> @enderror
+                            </div>
+
+                            <div>
+                                <label for="horizontal-offset" class="block text-sm font-medium text-gray-700">
+                                    Horizontal offset
+                                </label>
+                                <div class="mt-1">
+                                    <input type="text" id="font-space-limit"
+                                           class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                           wire:model="horizontalOffset">
+                                </div>
+                                @error('horizontalOffset') <span class="error">{{ $message }}</span> @enderror
+                            </div>
+
+                            <div>
+                                <span class="text-sm text-gray-600" wire:loading.class="animate-pulse">
+                                    {{ $parseMetrics }}
+                                </span>
+                            </div>
                         @endif
-
-                        <div>
-                            <label for="font-space-limit" class="block text-sm font-medium text-gray-700">Font space
-                                limit</label>
-                            <div class="mt-1">
-                                <input type="number" id="font-space-limit"
-                                       class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                       wire:model="fontSpaceLimit">
-                            </div>
-                            @error('fontSpaceLimit') <span class="error">{{ $message }}</span> @enderror
-                        </div>
-
-                        <div>
-                            <label for="horizontal-offset" class="block text-sm font-medium text-gray-700">Horizontal
-                                offset</label>
-                            <div class="mt-1">
-                                <input type="text" id="font-space-limit"
-                                       class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                       wire:model="horizontalOffset">
-                            </div>
-                            @error('horizontalOffset') <span class="error">{{ $message }}</span> @enderror
-                        </div>
                     </div>
                 </div>
             </section>
@@ -59,8 +67,8 @@
                 <h2 class="sr-only" id="section-2-title">Section title</h2>
                 <div class="rounded-lg bg-white overflow-hidden shadow">
                     <div class="p-6">
-                        <div class="bg-gray-50 overflow-hidden rounded-lg">
-                            <pre class="overflow-scroll px-4 py-5 sm:p-6">
+                        <div class="bg-gray-50 overflow-hidden rounded-lg" wire:loading.class="animate-pulse">
+                            <pre class="overflow-scroll px-4 py-5 sm:p-6 ">
                                 {!! $text !!}
                             </pre>
                         </div>

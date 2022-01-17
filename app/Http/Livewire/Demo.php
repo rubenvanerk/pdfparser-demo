@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Symfony\Component\Stopwatch\Stopwatch;
 
 class Demo extends Component
 {
@@ -13,8 +14,9 @@ class Demo extends Component
     public $text;
     public int $pageCount;
     public int $page = 1;
-    public ?int $fontSpaceLimit = null;
+    public $fontSpaceLimit = null;
     public ?string $horizontalOffset = null;
+    public string $parseMetrics;
 
     protected $queryString = [
         'fontSpaceLimit',
@@ -41,7 +43,13 @@ class Demo extends Component
             'horizontalOffset' => ['nullable'],
         ]);
 
+
+        $stopwatch = new Stopwatch();
+        $stopwatch->start('parseTime');
         $this->parsePdf();
+        $event = $stopwatch->stop('parseTime');
+
+        $this->parseMetrics = sprintf('%.2F MiB - %d ms', $event->getMemory() / 1024 / 1024, $event->getDuration());
     }
 
     private function parsePdf()
