@@ -79,9 +79,17 @@
                 <div class="rounded-lg bg-white overflow-hidden shadow">
                     <div class="p-6">
                         <div class="bg-gray-50 overflow-hidden rounded-lg" wire:loading.class="animate-pulse">
-                            <pre class="overflow-scroll px-4 py-5 sm:p-6 ">
+                            @if($pdf)
+                                <pre class="overflow-scroll px-4 py-5 sm:p-6 ">
                                 {!! $text !!}
                             </pre>
+                            @else
+                                <div class="relative block w-full border-2 border-gray-300 border-dashed rounded-lg p-12 text-center">
+                                    <span class="mt-2 block text-sm font-medium text-gray-900">
+                                        Please add a file to view the results
+                                    </span>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -26,8 +26,8 @@ class Demo extends Component
     public function mount()
     {
         $config = new \Smalot\PdfParser\Config();
-        $this->fontSpaceLimit = $config->getFontSpaceLimit();
-        $this->horizontalOffset = $config->getHorizontalOffset();
+        $this->fontSpaceLimit = $this->fontSpaceLimit ?: $config->getFontSpaceLimit();
+        $this->horizontalOffset = $this->horizontalOffset ?: $config->getHorizontalOffset();
     }
 
     public function render()
