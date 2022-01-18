@@ -54,7 +54,7 @@
                                 <label class="block text-sm font-medium text-gray-700">
                                     Code
                                 </label>
-                                <div class="text-xs bg-gray-50 overflow-scroll rounded-lg p-2">
+                                <div class="text-xs bg-gray-50 overflow-scroll rounded-lg p-2" wire:loading.class="animate-pulse">
                                     <code>
                                         $config = new \Smalot\PdfParser\Config();<br>
                                         $config->setFontSpaceLimit({{ $fontSpaceLimit }});<br>

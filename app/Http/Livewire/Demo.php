@@ -35,6 +35,11 @@ class Demo extends Component
         return view('livewire.demo');
     }
 
+    public function updatingFontSpaceLimit(&$value)
+    {
+        $value = (int) $value;
+    }
+
     public function updated()
     {
         $this->validate([
