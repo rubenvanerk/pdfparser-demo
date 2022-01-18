@@ -14,13 +14,13 @@ class Demo extends Component
     public $text;
     public int $pageCount;
     public int $page = 1;
-    public $fontSpaceLimit = null;
+    public ?int $fontSpaceLimit = null;
     public ?string $horizontalOffset = null;
     public string $parseMetrics;
 
     protected $queryString = [
-        'fontSpaceLimit',
-        'horizontalOffset',
+        'fontSpaceLimit' => ['except' => -50],
+        'horizontalOffset' => ['except' => ' '],
     ];
 
     public function mount()
@@ -42,7 +42,6 @@ class Demo extends Component
             'fontSpaceLimit' => ['int', 'required'],
             'horizontalOffset' => ['nullable'],
         ]);
-
 
         $stopwatch = new Stopwatch();
         $stopwatch->start('parseTime');

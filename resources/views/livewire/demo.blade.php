@@ -51,20 +51,25 @@
                             </div>
 
                             <div>
+                                <label class="block text-sm font-medium text-gray-700">
+                                    Code
+                                </label>
+                                <div class="text-xs bg-gray-50 overflow-scroll rounded-lg p-2">
+                                    <code>
+                                        $config = new \Smalot\PdfParser\Config();<br>
+                                        $config->setFontSpaceLimit({{ $fontSpaceLimit }});<br>
+                                        $config->setHorizontalOffset("{{ htmlentities($horizontalOffset) }}");<br><br>
+                                        $parser = new \Smalot\PdfParser\Parser([], $config);<br>
+                                        $pdf = $parser->parseFile('path/to/file');<br>
+                                        $text = $pdf->getText();<br>
+                                    </code>
+                                </div>
+                            </div>
+
+                            <div>
                                 <span class="text-sm text-gray-600" wire:loading.class="animate-pulse">
                                     {{ $parseMetrics }}
                                 </span>
-                            </div>
-
-                            <div class="text-xs bg-gray-50 overflow-scroll rounded-lg p-2">
-                                <code>
-                                    $config = new \Smalot\PdfParser\Config();<br>
-                                    $config->setFontSpaceLimit({{ $fontSpaceLimit }});<br>
-                                    $config->setHorizontalOffset("\t");<br><br>
-                                    $parser = new \Smalot\PdfParser\Parser([], $config);<br>
-                                    $pdf = $parser->parseFile('path/to/file');<br>
-                                    $text = $pdf->getText();<br>
-                                </code>
                             </div>
                         @endif
                     </div>

@@ -35,7 +35,7 @@
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
                         <h1 class="font-bold tracking-wide text-xl text-gray-700">
-                            PdfParser Demo
+                            smalot/pdfparser demo
                         </h1>
                     </div>
                     <div class="-my-px ml-6 flex space-x-8">
