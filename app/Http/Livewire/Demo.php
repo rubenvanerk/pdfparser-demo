@@ -40,6 +40,11 @@ class Demo extends Component
         $value = (int) $value;
     }
 
+    public function updatingPdf()
+    {
+        $this->page = 1;
+    }
+
     public function updated()
     {
         $this->validate([
