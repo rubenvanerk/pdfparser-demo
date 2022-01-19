@@ -48,7 +48,7 @@ class Demo extends Component
     public function updated()
     {
         $this->validate([
-            'pdf' => ['mimetypes:application/pdf', 'max:1024', 'required'],
+            'pdf' => ['mimetypes:application/pdf', 'max:8000', 'required'],
             'fontSpaceLimit' => ['int', 'required'],
             'horizontalOffset' => ['nullable'],
         ]);
