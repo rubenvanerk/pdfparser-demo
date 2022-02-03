@@ -8,7 +8,7 @@ jobs:
   deploy:
     environment:
       name: production
-      url: pdfparser.wrve.nl
+      url: https://pdfparser.wrve.nl
     runs-on: ubuntu-latest
     steps:
       -   name: Deploy
