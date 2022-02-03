@@ -11,6 +11,6 @@
 2. Run `vendor/bin/sail up`
 3. Run `vendor/bin/sail npm install`
 4. Run `vendor/bin/sail npm run dev`
-5. Run `mv .env.example env`
+5. Run `cp .env.example env`
 6. Run `php artisan key:generate`
 7. Go to `localhost`
