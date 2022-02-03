@@ -80,7 +80,7 @@
                 </div>
                 <div class="mt-8 md:mt-0 md:order-1">
                     <p class="text-center text-base text-gray-400">
-                        smalot/pdfparser version: <code>dev-master#ddb14aedf47c0e9848dc6c183d3bb6f3cdb7f9d5</code>
+                        smalot/pdfparser version: <code>v2.1.0</code>
                     </p>
                 </div>
             </div>
