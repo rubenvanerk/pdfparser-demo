@@ -22,6 +22,7 @@
 
 <!-- Scripts -->
     <script src="{{ url(mix('js/app.js')) }}" defer></script>
+    <script defer data-domain="pdfparser.wrve.nl" src="https://plausible.wrve.nl/js/plausible.js"></script>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
