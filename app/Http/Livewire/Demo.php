@@ -12,6 +12,7 @@ class Demo extends Component
 
     public $pdf;
     public $text;
+    public $metaData;
     public int $pageCount;
     public int $page = 1;
     public ?int $fontSpaceLimit = null;
@@ -72,5 +73,6 @@ class Demo extends Component
 
         $this->text = $pdf->getPages()[$this->page - 1]?->getText();
         $this->pageCount = count($pdf->getPages());
+        $this->metaData = $pdf->getDetails();
     }
 }

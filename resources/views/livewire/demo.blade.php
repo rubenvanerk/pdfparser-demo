@@ -54,7 +54,8 @@
                                 <label class="block text-sm font-medium text-gray-700">
                                     Code
                                 </label>
-                                <div class="text-xs bg-gray-50 overflow-scroll rounded-lg p-2" wire:loading.class="animate-pulse">
+                                <div class="text-xs bg-gray-50 overflow-scroll rounded-lg p-2"
+                                     wire:loading.class="animate-pulse">
                                     <code>
                                         $config = new \Smalot\PdfParser\Config();<br>
                                         $config->setFontSpaceLimit({{ $fontSpaceLimit }});<br>
@@ -74,6 +75,24 @@
                         @endif
                     </div>
                 </div>
+
+                @if ($pageCount)
+                    <div class="rounded-lg bg-white overflow-hidden shadow mt-5">
+                        <div class="p-6 flex-col space-y-4">
+                            <h3>Details</h3>
+
+                            <div class="text-xs bg-gray-50 overflow-scroll rounded-lg p-2"
+                                 wire:loading.class="animate-pulse">
+                                <code>
+                                    $pdf->getDetails();<br><br>
+
+                                    <pre>{{ print_r($metaData, 1) }}</pre>
+                                </code>
+                            </div>
+
+                        </div>
+                    </div>
+                @endif
             </section>
         </div>
 
@@ -86,10 +105,11 @@
                         <div class="bg-gray-50 overflow-hidden rounded-lg" wire:loading.class="animate-pulse">
                             @if($pdf)
                                 <pre class="overflow-scroll px-4 py-5 sm:p-6 ">
-                                {!! $text !!}
-                            </pre>
+                                    {!! $text !!}
+                                </pre>
                             @else
-                                <div class="relative block w-full border-2 border-gray-300 border-dashed rounded-lg p-12 text-center">
+                                <div
+                                    class="relative block w-full border-2 border-gray-300 border-dashed rounded-lg p-12 text-center">
                                     <span class="mt-2 block text-sm font-medium text-gray-900">
                                         Please add a file to view the results
                                     </span>
