@@ -103,15 +103,25 @@
                 <div class="rounded-lg bg-white overflow-hidden shadow">
                     <div class="p-6">
                         <div class="bg-gray-50 overflow-hidden rounded-lg" wire:loading.class="animate-pulse">
-                            @if($pdf)
+                            @if($exceptionMessage)
+                                <div
+                                    class="relative block w-full border-2 border-red-300 border-solid rounded-lg p-12 text-center">
+                                    <span class="mt-2 block text-sm font-medium text-gray-900">
+                                        Exception: {{ $exceptionMessage }}
+                                    </span>
+                                </div>
+                            @elseif($pdf)
                                 <pre class="overflow-scroll px-4 py-5 sm:p-6 ">
                                     {!! $text !!}
                                 </pre>
                             @else
                                 <div
                                     class="relative block w-full border-2 border-gray-300 border-dashed rounded-lg p-12 text-center">
-                                    <span class="mt-2 block text-sm font-medium text-gray-900">
+                                    <span class="mt-2 block text-sm font-medium text-gray-900" wire:loading.remove>
                                         Please add a file to view the results
+                                    </span>
+                                    <span class="mt-2 block text-sm font-medium text-gray-900" wire:loading>
+                                        Parsing your file...
                                     </span>
                                 </div>
                             @endif
