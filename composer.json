@@ -1,25 +1,23 @@
 {
-    "name": "laravel/laravel",
+    "name": "rubenvanerk/pdfparser-demo",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
         "php": "^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "larabug/larabug": "^2.4",
-        "laravel/framework": "^8.75",
+        "laravel/framework": "^9.0",
         "livewire/livewire": "^2.9",
         "smalot/pdfparser": "^2.0",
         "symfony/stopwatch": "^3.4"
     },
     "require-dev": {
-        "facade/ignition": "^2.5",
+        "spatie/laravel-ignition": "^1.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.12",
         "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^5.10",
+        "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
