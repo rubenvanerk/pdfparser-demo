@@ -16,12 +16,8 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
-@livewireStyles
-
-<!-- Scripts -->
-    <script src="{{ url(mix('js/app.js')) }}" defer></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
     <script defer data-domain="pdfparser.wrve.nl" src="https://plausible.wrve.nl/js/script.js"></script>
 
     <!-- CSRF Token -->
