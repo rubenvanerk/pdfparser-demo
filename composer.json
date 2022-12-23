@@ -7,7 +7,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "larabug/larabug": "^2.4",
-        "laravel/framework": "^9.0",
+        "laravel/framework": "^9.19",
         "livewire/livewire": "^2.9",
         "smalot/pdfparser": "^2.0",
         "symfony/stopwatch": "^3.4"
