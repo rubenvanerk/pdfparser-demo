@@ -65,7 +65,7 @@
             <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
                 <div class="mb-8 md:mb-0">
                     <p class="text-center text-base text-gray-400">
-                        smalot/pdfparser version: <code><a href="https://github.com/smalot/pdfparser/releases/tag/v2.2.0" class="hover:text-gray-500" target="_blank">v2.2.0</a></code>
+                        <x-pdfparser-version/>
                     </p>
                 </div>
                 <div class="flex justify-center space-x-6">
