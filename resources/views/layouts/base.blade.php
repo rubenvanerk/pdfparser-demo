@@ -19,6 +19,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     <script defer data-domain="pdfparser.wrve.nl" src="https://plausible.wrve.nl/js/script.js"></script>
+    <script src="https://cdn.usefathom.com/script.js" data-site="HRYDOXXY" defer></script>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
