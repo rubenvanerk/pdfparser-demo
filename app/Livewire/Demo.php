@@ -38,21 +38,24 @@ class Demo extends Component
         $value = (int) $value;
     }
 
+    public function increment()
+    {
+        $this->page = $this->page + 1;
+    }
+
     public function updatingPdf(): void
     {
         $this->page = 1;
         $this->exceptionMessage = null;
     }
 
-    public function parse(): void
+    public function updatedPdf(): void
     {
         $this->validate([
             'pdf' => ['mimetypes:application/pdf', 'max:8000', 'required'],
             'fontSpaceLimit' => ['int'],
             'horizontalOffset' => ['nullable'],
         ]);
-
-        ray()->ban();
 
         try {
             $stopwatch = new Stopwatch();
@@ -66,8 +69,6 @@ class Demo extends Component
 
             $this->pageCount = null;
         }
-
-        $this->text = 'hai';
     }
 
     private function parsePdf(): void
