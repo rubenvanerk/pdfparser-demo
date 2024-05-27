@@ -7,6 +7,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^11.0",
         "livewire/livewire": "^3.0",
+        "sentry/sentry-laravel": "^4.5",
         "smalot/pdfparser": "^2.10.0",
         "spatie/laravel-ray": "^1.36",
         "symfony/stopwatch": "^7.0"
