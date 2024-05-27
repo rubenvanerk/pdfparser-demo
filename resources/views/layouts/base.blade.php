@@ -67,7 +67,7 @@
                     </p>
                 </div>
                 <div class="flex justify-center space-x-6">
-                    <a href="https://plausible.wrve.nl/pdfparser.wrve.nl" target="_blank" class="text-gray-400 hover:text-gray-500">
+                    <a href="https://app.usefathom.com/share/hrydoxxy/pdfparser+demo" target="_blank" class="text-gray-400 hover:text-gray-500">
                         User statistics
                     </a>
                     <a href="https://github.com/rubenvanerk/pdfparser-demo" class="text-gray-400 hover:text-gray-500"
