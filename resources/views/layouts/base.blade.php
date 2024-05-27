@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @hasSection('title')
-
         <title>@yield('title') - {{ config('app.name') }}</title>
     @else
         <title>{{ config('app.name') }}</title>
@@ -17,7 +16,6 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @livewireStyles
     <script defer data-domain="pdfparser.wrve.nl" src="https://plausible.wrve.nl/js/script.js"></script>
     <script src="https://cdn.usefathom.com/script.js" data-site="HRYDOXXY" defer></script>
 
@@ -89,6 +87,5 @@
 
 </div>
 
-@livewireScripts
 </body>
 </html>

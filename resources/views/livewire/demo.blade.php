@@ -13,12 +13,14 @@
                             @error('pdf') <span class="error">{{ $message }}</span> @enderror
                         </div>
 
+                        <button wire:click="parse">Parse</button>
+
                         @if ($pageCount)
                             <div>
                                 <label for="page" class="block text-sm font-medium text-gray-700">Page</label>
                                 <select id="page"
                                         class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm rounded-md"
-                                        wire:model="page">
+                                        wire:model.live="page">
                                     @for($i = 1; $i <= $pageCount; $i++)
                                         <option value="{{ $i }}">Page {{ $i }} / {{ $pageCount }}</option>
                                     @endfor
@@ -33,7 +35,7 @@
                                 <div class="mt-1">
                                     <input type="number" id="font-space-limit"
                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                           wire:model="fontSpaceLimit">
+                                           wire:model.live="fontSpaceLimit">
                                 </div>
                                 @error('fontSpaceLimit') <span class="error">{{ $message }}</span> @enderror
                             </div>
@@ -45,7 +47,7 @@
                                 <div class="mt-1">
                                     <input type="text" id="font-space-limit"
                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                           wire:model="horizontalOffset">
+                                           wire:model.live="horizontalOffset">
                                 </div>
                                 @error('horizontalOffset') <span class="error">{{ $message }}</span> @enderror
                             </div>
@@ -95,6 +97,8 @@
                 @endif
             </section>
         </div>
+
+        {{ $text }}
 
         <!-- Right column -->
         <div class="grid grid-cols-1 gap-4 lg:col-span-2">

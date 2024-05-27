@@ -1,11 +1,9 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Exception;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Smalot\PdfParser\Config;
@@ -21,26 +19,18 @@ class Demo extends Component
     public $metaData;
     public ?int $pageCount;
     public int $page = 1;
+    #[Url(except: -50)]
     public ?int $fontSpaceLimit = null;
+    #[Url(except: ' ')]
     public ?string $horizontalOffset = null;
     public string $parseMetrics;
     public ?string $exceptionMessage = null;
-
-    protected $queryString = [
-        'fontSpaceLimit' => ['except' => -50],
-        'horizontalOffset' => ['except' => ' '],
-    ];
 
     public function mount(): void
     {
         $config = new Config();
         $this->fontSpaceLimit = $this->fontSpaceLimit ?: $config->getFontSpaceLimit();
         $this->horizontalOffset = $this->horizontalOffset ?: $config->getHorizontalOffset();
-    }
-
-    public function render(): View| Factory|Application
-    {
-        return view('livewire.demo');
     }
 
     public function updatingFontSpaceLimit(&$value): void
@@ -54,13 +44,15 @@ class Demo extends Component
         $this->exceptionMessage = null;
     }
 
-    public function updated(): void
+    public function parse(): void
     {
         $this->validate([
             'pdf' => ['mimetypes:application/pdf', 'max:8000', 'required'],
-            'fontSpaceLimit' => ['int', 'required'],
+            'fontSpaceLimit' => ['int'],
             'horizontalOffset' => ['nullable'],
         ]);
+
+        ray()->ban();
 
         try {
             $stopwatch = new Stopwatch();
@@ -74,6 +66,8 @@ class Demo extends Component
 
             $this->pageCount = null;
         }
+
+        $this->text = 'hai';
     }
 
     private function parsePdf(): void
